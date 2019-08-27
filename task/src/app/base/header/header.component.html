@@ -1,0 +1,17 @@
+<mat-toolbar class="header navbar">
+    <div>
+        <span>Header</span>
+        <button class="btnHover" mat-icon-button matTooltip="toggleSidenav" (click)="toggleSidenav.emit()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <span *ngIf="!authService.loggedIn()">
+            <a href="/login">Login</a>|
+            <a href="/register"> Register</a>
+        </span>
+        <button mat-icon-button class="btnHover" matTooltip="logout" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

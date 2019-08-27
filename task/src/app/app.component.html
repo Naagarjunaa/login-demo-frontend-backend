@@ -1,0 +1,12 @@
+<app-header *ngIf="authService.loggedIn()" (toggleSidenav)="sidenav.toggle()" (closeSidenav)="sidenav.close()">
+</app-header>
+<mat-sidenav-container id="container">
+    <mat-sidenav #sidenav mode="side" [fixedInViewport]="true" class="sidebar">
+        <app-sidebar *ngIf="authService.loggedIn()" (closeSidenav)="sidenav.close()"></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="router-outlet">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
